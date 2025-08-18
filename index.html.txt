@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Prasad | Embedded Systems Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    header {
+      background: linear-gradient(135deg, #1e40af, #0f172a);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    h2 {
+      color: #38bdf8;
+      border-bottom: 2px solid #38bdf8;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      font-size: 1.6rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .project-card {
+      background: #1e293b;
+      padding: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+    .icons {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #facc15;
+    }
+    footer {
+      text-align: center;
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill {
+      background: #1e293b;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill i {
+      color: #facc15;
+    }
+    .contact-links a {
+      display: inline-block;
+      margin-right: 1rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ Sai Prasad</h1>
+    <p>Embedded Systems Engineer | IoT Developer | Edge AI Enthusiast</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I am an Embedded Systems Engineer skilled in STM32, Arduino, Raspberry Pi, FreeRTOS, and IoT development.
+      I am passionate about building real-time firmware and integrating AI on embedded devices to create smart, connected solutions.
+      This page showcases my journey in Embedded + AI with hands-on projects.
+    </p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><i class="fa-solid fa-microchip"></i> STM32 / ARM Cortex-M</div>
+      <div class="skill"><i class="fa-solid fa-microchip"></i> Arduino</div>
+      <div class="skill"><i class="fa-solid fa-microchip"></i> Raspberry Pi</div>
+      <div class="skill"><i class="fa-solid fa-code"></i> Embedded C / C++</div>
+      <div class="skill"><i class="fa-solid fa-network-wired"></i> UART, I2C, SPI, CAN</div>
+      <div class="skill"><i class="fa-solid fa-microchip"></i> FreeRTOS</div>
+      <div class="skill"><i class="fa-solid fa-cloud"></i> IoT Cloud Integration</div>
+      <div class="skill"><i class="fa-solid fa-robot"></i> Edge AI</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <div class="icons"><i class="fa-solid fa-car"></i></div>
+        <h3>Car Black Box Firmware</h3>
+        <p>PIC microcontroller + EEPROM logging system with LCD display. Logs vehicle events and sensor data in real-time.</p>
+        <a href="#">🔗 View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <div class="icons"><i class="fa-solid fa-satellite-dish"></i></div>
+        <h3>Accident Detection IoT</h3>
+        <p>IoT-enabled accident detection using GPS + GSM for real-time alerts and location tracking.</p>
+        <a href="#">🔗 View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <div class="icons"><i class="fa-solid fa-image"></i></div>
+        <h3>Image Steganography Tool</h3>
+        <p>C program for hiding and extracting secret data in BMP images using bitwise operations.</p>
+        <a href="#">🔗 View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <div class="icons"><i class="fa-solid fa-camera"></i></div>
+        <h3>AI on Raspberry Pi</h3>
+        <p>Live face/object detection using Raspberry Pi 3 Model B and TensorFlow Lite. (Ongoing)</p>
+        <a href="#">🔗 View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-links">
+      📧 <a href="mailto:sp0404@outlook.in"><i class="fa-solid fa-envelope"></i> Email</a>
+      🔗 <a href="https://www.linkedin.com/in/sai-prasad-k-165a06271/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      💻 <a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sai Prasad | Embedded Systems Portfolio</p>
+  </footer>
+</body>
+</html>
+
