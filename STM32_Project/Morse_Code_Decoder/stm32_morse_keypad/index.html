@@ -24,39 +24,38 @@
 <body>
   <h1>⚡ Morse Code Decoder – STM32F401RE</h1>
   <p>
-    This project demonstrates a **real-time Morse Code Decoder** designed and implemented on the STM32F401RE platform.  
-    The system captures input via a tactile push button, processes the Morse signals, decodes them into characters,  
-    and outputs results both on an **I²C-driven LCD display** and **non-volatile EEPROM storage**.  
+    A **real-time Morse Code Decoder** implemented on STM32F401RE.  
+    It captures button input, decodes dot/dash sequences into characters, 
+    and provides feedback through an LCD and EEPROM for persistent storage.
   </p>
 
   <div class="highlight">
-    <strong>Core Contribution:</strong> Firmware design, real-time input processing, peripheral integration (I²C, GPIO),  
-    and end-to-end system validation.
+    <strong>Core Contribution:</strong> Designed timing logic for Morse input, integrated I²C LCD & EEPROM, and validated end-to-end system.
   </div>
 
   <h2>🔑 Key Highlights</h2>
   <ul>
-    <li>Precise timing logic for dot/dash recognition and spacing</li>
-    <li>Integrated EEPROM storage (24C04) for persistent decoded messages</li>
-    <li>Real-time LCD updates for immediate feedback</li>
-    <li>Minimalistic HAL-based architecture for STM32F4 series</li>
+    <li>Dot/Dash input captured via push button with precise timing</li>
+    <li>Live decoded characters displayed on 16x2 I²C LCD</li>
+    <li>Persistent message storage on EEPROM 24C04</li>
+    <li>Onboard LED for input feedback</li>
   </ul>
 
   <h2>⚙️ Hardware Setup</h2>
   <ul>
     <li><b>MCU:</b> STM32F401RE (Nucleo-64)</li>
-    <li><b>Display:</b> 16x2 LCD over I²C (PB8 → SCL, PB9 → SDA)</li>
-    <li><b>Storage:</b> EEPROM 24C04 on shared I²C bus</li>
+    <li><b>Display:</b> 16x2 LCD via I²C (PB8 → SCL, PB9 → SDA)</li>
+    <li><b>Storage:</b> EEPROM 24C04 (I²C)</li>
     <li><b>Input:</b> Push Button (PC13)</li>
     <li><b>Feedback:</b> Onboard LED (PA5)</li>
   </ul>
 
-  <img src="../images/morse_decoder_wiring.png" alt="Wiring Diagram">
-  <img src="../images/morse_decoder_lcd.jpg" alt="LCD Output">
+  <img src="../../images/morse_decoder_wiring.png" alt="Morse Decoder Wiring Diagram">
+  <img src="../../images/morse_decoder_lcd.jpg" alt="Morse Decoder LCD Output">
 
   <h2>📂 Resources</h2>
-  <a class="btn" href="stm32_morse_keypad/" target="_blank">🔗 Source Code</a>
-  <a class="btn" href="README.md" target="_blank">📄 Documentation</a>
+  <a class="btn" href="https://github.com/SaiPrasadK-Firmware/SaiPrasadK-Firmware.github.io/tree/main/STM32_Project/Morse_Code_Decoder" target="_blank">🔗 Source Code</a>
+  <a class="btn" href="https://github.com/SaiPrasadK-Firmware/SaiPrasadK-Firmware.github.io/blob/main/STM32_Project/Morse_Code_Decoder/README.md" target="_blank">📄 Documentation</a>
 
   <a href="../index.html" class="back">← Back to STM32 Projects</a>
 </body>
