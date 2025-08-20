@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morse Code Decoder – STM32F401RE | Sai Prasad</title>
+  <style>
+    body { background:#0f172a; color:#e2e8f0; font-family:'Segoe UI',Tahoma,sans-serif; margin:0; padding:2rem; }
+    h1 { color:#38bdf8; font-size:2rem; }
+    h2 { color:#38bdf8; margin-top:2rem; font-size:1.4rem; }
+    p { line-height:1.6; font-size:1.05rem; }
+    ul { line-height:1.8; }
+    .btn {
+      display:inline-block; margin:0.8rem 0.8rem 0 0;
+      padding:0.6rem 1.2rem; background:#38bdf8; color:#0f172a;
+      border-radius:8px; text-decoration:none; font-weight:600;
+    }
+    .btn:hover { background:#0ea5e9; }
+    img { margin-top:1rem; border-radius:12px; max-width:100%; box-shadow:0 4px 12px rgba(0,0,0,0.4); }
+    .back { display:block; margin-top:2rem; color:#38bdf8; text-decoration:none; font-size:1rem; }
+    .highlight { background:#1e293b; padding:1rem; border-radius:12px; margin-top:1rem; }
+  </style>
+</head>
+<body>
+  <h1>⚡ Morse Code Decoder – STM32F401RE</h1>
+  <p>
+    This project demonstrates a **real-time Morse Code Decoder** designed and implemented on the STM32F401RE platform.  
+    The system captures input via a tactile push button, processes the Morse signals, decodes them into characters,  
+    and outputs results both on an **I²C-driven LCD display** and **non-volatile EEPROM storage**.  
+  </p>
+
+  <div class="highlight">
+    <strong>Core Contribution:</strong> Firmware design, real-time input processing, peripheral integration (I²C, GPIO),  
+    and end-to-end system validation.
+  </div>
+
+  <h2>🔑 Key Highlights</h2>
+  <ul>
+    <li>Precise timing logic for dot/dash recognition and spacing</li>
+    <li>Integrated EEPROM storage (24C04) for persistent decoded messages</li>
+    <li>Real-time LCD updates for immediate feedback</li>
+    <li>Minimalistic HAL-based architecture for STM32F4 series</li>
+  </ul>
+
+  <h2>⚙️ Hardware Setup</h2>
+  <ul>
+    <li><b>MCU:</b> STM32F401RE (Nucleo-64)</li>
+    <li><b>Display:</b> 16x2 LCD over I²C (PB8 → SCL, PB9 → SDA)</li>
+    <li><b>Storage:</b> EEPROM 24C04 on shared I²C bus</li>
+    <li><b>Input:</b> Push Button (PC13)</li>
+    <li><b>Feedback:</b> Onboard LED (PA5)</li>
+  </ul>
+
+  <img src="../images/morse_decoder_wiring.png" alt="Wiring Diagram">
+  <img src="../images/morse_decoder_lcd.jpg" alt="LCD Output">
+
+  <h2>📂 Resources</h2>
+  <a class="btn" href="stm32_morse_keypad/" target="_blank">🔗 Source Code</a>
+  <a class="btn" href="README.md" target="_blank">📄 Documentation</a>
+
+  <a href="../index.html" class="back">← Back to STM32 Projects</a>
+</body>
+</html>
