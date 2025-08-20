@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morse Code Decoder – STM32F401RE | Sai Prasad</title>
+  <style>
+    body { background:#0f172a; color:#e2e8f0; font-family:'Segoe UI',Tahoma,sans-serif; margin:0; padding:2rem; }
+    h1 { color:#38bdf8; font-size:2rem; }
+    h2 { color:#38bdf8; margin-top:2rem; font-size:1.4rem; }
+    p { line-height:1.6; font-size:1.05rem; }
+    ul { line-height:1.8; }
+    .btn {
+      display:inline-block; margin:0.8rem 0.8rem 0 0;
+      padding:0.6rem 1.2rem; background:#38bdf8; color:#0f172a;
+      border-radius:8px; text-decoration:none; font-weight:600;
+    }
+    .btn:hover { background:#0ea5e9; }
+    img { margin-top:1rem; border-radius:12px; max-width:100%; box-shadow:0 4px 12px rgba(0,0,0,0.4); }
+    .back { display:block; margin-top:2rem; color:#38bdf8; text-decoration:none; font-size:1rem; }
+    .highlight { background:#1e293b; padding:1rem; border-radius:12px; margin-top:1rem; }
+  </style>
+</head>
+<body>
+  <h1>⚡ Morse Code Decoder – STM32F401RE</h1>
+  <p>
+    A **real-time Morse Code Decoder** implemented on STM32F401RE.  
+    It captures button input, decodes dot/dash sequences into characters, 
+    and provides feedback through an LCD and EEPROM for persistent storage.
+  </p>
+
+  <div class="highlight">
+    <strong>Core Contribution:</strong> Designed timing logic for Morse input, integrated I²C LCD & EEPROM, and validated end-to-end system.
+  </div>
+
+  <h2>🔑 Key Highlights</h2>
+  <ul>
+    <li>Dot/Dash input captured via push button with precise timing</li>
+    <li>Live decoded characters displayed on 16x2 I²C LCD</li>
+    <li>Persistent message storage on EEPROM 24C04</li>
+    <li>Onboard LED for input feedback</li>
+  </ul>
+
+  <h2>⚙️ Hardware Setup</h2>
+  <ul>
+    <li><b>MCU:</b> STM32F401RE (Nucleo-64)</li>
+    <li><b>Display:</b> 16x2 LCD via I²C (PB8 → SCL, PB9 → SDA)</li>
+    <li><b>Storage:</b> EEPROM 24C04 (I²C)</li>
+    <li><b>Input:</b> Push Button (PC13)</li>
+    <li><b>Feedback:</b> Onboard LED (PA5)</li>
+  </ul>
+
+  <img src="../../images/morse_decoder_wiring.png" alt="Morse Decoder Wiring Diagram">
+  <img src="../../images/morse_decoder_lcd.jpg" alt="Morse Decoder LCD Output">
+
+  <h2>📂 Resources</h2>
+  <a class="btn" href="https://github.com/SaiPrasadK-Firmware/SaiPrasadK-Firmware.github.io/tree/main/STM32_Project/Morse_Code_Decoder" target="_blank">🔗 Source Code</a>
+  <a class="btn" href="https://github.com/SaiPrasadK-Firmware/SaiPrasadK-Firmware.github.io/blob/main/STM32_Project/Morse_Code_Decoder/README.md" target="_blank">📄 Documentation</a>
+
+  <a href="../index.html" class="back">← Back to STM32 Projects</a>
+</body>
+</html>
