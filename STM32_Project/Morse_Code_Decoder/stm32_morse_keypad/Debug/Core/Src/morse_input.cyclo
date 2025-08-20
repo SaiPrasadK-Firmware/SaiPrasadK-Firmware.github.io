@@ -1,0 +1,2 @@
+../Core/Src/morse_input.c:9:6:MorseInput_Init	1
+../Core/Src/morse_input.c:16:12:Morse_ReadInput	10
