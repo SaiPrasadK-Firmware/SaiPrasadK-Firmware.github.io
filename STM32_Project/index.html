@@ -3,83 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LED Blink – STM32F401RE | Sai Prasad</title>
-  <link rel="stylesheet" href="../../style.css"> <!-- reuse main CSS if you have -->
+  <title>STM32 Projects | Sai Prasad</title>
   <style>
     body {
       background: #0f172a;
       color: #e2e8f0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
+      margin: 0;
       padding: 2rem;
     }
-    h1, h2 {
+    h1 {
       color: #38bdf8;
+      text-align: center;
     }
-    pre {
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
       background: #1e293b;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
     }
-    a {
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h2 {
+      color: #38bdf8;
+      margin-top: 0;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
       color: #38bdf8;
       text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      font-weight: bold;
     }
     .back-link {
-      display: inline-block;
+      display: block;
       margin-top: 2rem;
+      text-align: center;
+      color: #38bdf8;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>💡 LED Blink – STM32F401RE</h1>
-  <p>The simplest and most essential project for getting started with STM32 development.  
-  This program toggles the <b>onboard LED (LD2 at PA5)</b> on the STM32F401RE Nucleo board every 500 ms.</p>
+  <h1>⚡ STM32 Projects</h1>
 
-  <h2>🚀 Features</h2>
-  <ul>
-    <li>Blinks the onboard <b>LD2 LED</b> using GPIO.</li>
-    <li>Configures system clock and GPIO using STM32 HAL.</li>
-    <li>Provides a base template for all future STM32 projects.</li>
-  </ul>
+  <div class="projects">
+    <!-- Morse Code Decoder -->
+    <div class="card">
+      <h2>Morse Code Decoder</h2>
+      <p>Decode Morse input via button, show results on LCD, and store messages in EEPROM.</p>
+      <a href="Morse_Code_Decoder/index.html">View Project →</a>
+    </div>
 
-  <h2>🛠️ Hardware</h2>
-  <ul>
-    <li><b>MCU</b>: STM32F401RE (Nucleo-64 board)</li>
-    <li><b>LED</b>: Onboard LD2 (connected to PA5)</li>
-    <li><b>Power</b>: USB (5V)</li>
-  </ul>
+    <!-- LED Blink -->
+    <div class="card">
+      <h2>LED Blink</h2>
+      <p>The classic "Hello World" of embedded systems. Toggle the onboard LED (PA5) every 500ms.</p>
+      <a href="LED_Blink/index.html">View Project →</a>
+    </div>
 
-  <h2>📐 Pinout / Connection</h2>
-  <p><b>PA5 → Onboard LD2 LED</b><br>No external hardware required.</p>
+    <!-- FreeRTOS Example -->
+    <div class="card">
+      <h2>FreeRTOS Timer Example</h2>
+      <p>Experiment with FreeRTOS timers, tasks, and scheduling on STM32.</p>
+      <a href="FreeRTOS_Timer/index.html">View Project →</a>
+    </div>
+  </div>
 
-  <h2>📜 Code Overview</h2>
-  <pre><code>
-while (1)
-{
-  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // Toggle PA5 (LD2 LED)
-  HAL_Delay(500);                        // 500 ms delay
-}
-  </code></pre>
-
-  <h2>📚 Learning Outcomes</h2>
-  <ul>
-    <li>Understand HAL initialization flow (HAL_Init, clock config, GPIO init).</li>
-    <li>Learn how to toggle GPIO pins in firmware.</li>
-    <li>First step toward advanced STM32 projects.</li>
-  </ul>
-
-  <h2>🔗 Project Repository</h2>
-  <p>
-    👉 <a href="https://github.com/YOUR_USERNAME/STM32_Project/tree/main/LED_Blink" target="_blank">
-      View Full Source Code on GitHub
-    </a>
-  </p>
-
-  <a href="../index.html" class="back-link">← Back to STM32 Projects</a>
+  <a href="../index.html" class="back-link">← Back to Home</a>
 </body>
 </html>
