@@ -97,7 +97,7 @@ This felt like building a mini embedded system from scratch — hardware + firmw
 
 ## 🔗 Repo & Resources
 
-- Full project repo: [Morse Code Decoder – Source Code](https://github.com/YOUR_USERNAME/Morse_Code_Decoder)  
+- Full project repo: [Morse Code Decoder – Source Code](https://github.com/SaiPrasadK-Firmware/SaiPrasadK-Firmware.github.io/tree/main/STM32_Project/Morse_Code_Decoder)  
 - [STM32CubeF4 HAL Documentation](https://www.st.com/en/embedded-software/stm32cubef4.html)  
 
 ---
