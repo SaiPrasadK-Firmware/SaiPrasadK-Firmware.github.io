@@ -1,221 +1,1454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sai Prasad | Embedded Systems Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Prasad | Embedded Systems Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    /* ---------- Base ---------- */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0a0f1c;
-      color: #e2e8f0;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    h1, h2 {
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafbfc;
+            overflow-x: hidden;
+        }
 
-    a {
-      text-decoration: none;
-      color: #38bdf8;
-      transition: 0.3s ease;
-    }
+        /* Enhanced Background Animations */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
 
-    a:hover {
-      color: #0ea5e9;
-    }
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 15s ease-in-out infinite;
+        }
 
-    /* ---------- Background Circuit Effect ---------- */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://www.transparenttextures.com/patterns/circuit-board.png');
-      opacity: 0.06;
-      z-index: -1;
-    }
+        .shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
 
-    /* ---------- Header ---------- */
-    header {
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem;
-      position: relative;
-      box-shadow: 0 0 25px rgba(56,189,248,0.2);
-    }
+        .shape:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation-delay: 2s;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: #38bdf8;
-      text-shadow: 0 0 12px rgba(56,189,248,0.8);
-    }
+        .shape:nth-child(3) {
+            top: 60%;
+            left: 5%;
+            width: 120px;
+            height: 60px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border-radius: 30px;
+            animation-delay: 4s;
+        }
 
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-      color: #cbd5e1;
-    }
+        .shape:nth-child(4) {
+            bottom: 20%;
+            right: 10%;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            animation-delay: 6s;
+        }
 
-    .resume-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: all 0.2s ease;
-    }
+        .shape:nth-child(5) {
+            top: 50%;
+            left: 80%;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #fa709a, #fee140);
+            border-radius: 20%;
+            animation-delay: 8s;
+        }
 
-    .resume-btn:hover {
-      background: #0ea5e9;
-      box-shadow: 0 0 15px #0ea5e9;
-    }
+        .shape:nth-child(6) {
+            bottom: 40%;
+            left: 20%;
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation-delay: 10s;
+        }
 
-    /* ---------- Sections ---------- */
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 3rem 1.5rem;
-    }
+        @keyframes float {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg) scale(1); 
+            }
+            25% { 
+                transform: translate(20px, -20px) rotate(90deg) scale(1.1); 
+            }
+            50% { 
+                transform: translate(-15px, -40px) rotate(180deg) scale(0.9); 
+            }
+            75% { 
+                transform: translate(-30px, -10px) rotate(270deg) scale(1.05); 
+            }
+        }
 
-    h2 {
-      color: #38bdf8;
-      border-left: 4px solid #38bdf8;
-      padding-left: 0.6rem;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
+        /* Geometric Grid Background */
+        .geometric-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.05) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 24%, rgba(79, 172, 254, 0.02) 25%, rgba(79, 172, 254, 0.02) 26%, transparent 27%, transparent 74%, rgba(79, 172, 254, 0.02) 75%, rgba(79, 172, 254, 0.02) 76%, transparent 77%, transparent),
+                linear-gradient(-45deg, transparent 24%, rgba(67, 233, 123, 0.02) 25%, rgba(67, 233, 123, 0.02) 26%, transparent 27%, transparent 74%, rgba(67, 233, 123, 0.02) 75%, rgba(67, 233, 123, 0.02) 76%, transparent 77%, transparent);
+            background-size: 200px 200px, 300px 300px, 50px 50px, 50px 50px;
+            animation: drift 30s linear infinite;
+        }
 
-    p {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-    }
+        @keyframes drift {
+            0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+            100% { background-position: 200px 200px, -300px 300px, 50px 50px, -50px 50px; }
+        }
 
-    /* ---------- Skills ---------- */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-    .skill {
-      background: #1e293b;
-      padding: 0.7rem 1.2rem;
-      border-radius: 12px;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
 
-    .skill:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 12px rgba(56,189,248,0.5);
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
 
-    .skill i {
-      color: #facc15;
-    }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    /* ---------- Projects ---------- */
-    a.project-link {
-      font-weight: bold;
-      border-bottom: 1px dashed #38bdf8;
-    }
+        .nav-menu a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
 
-    /* ---------- Contact ---------- */
-    .contact-links a {
-      display: inline-block;
-      margin-right: 1.2rem;
-      font-size: 1.2rem;
-      transition: transform 0.2s ease;
-    }
+        .nav-menu a:hover, .nav-menu a.active {
+            color: #2563eb;
+        }
 
-    .contact-links a:hover {
-      transform: scale(1.1);
-      color: #0ea5e9;
-    }
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-    /* ---------- Footer ---------- */
-    footer {
-      text-align: center;
-      background: #1e293b;
-      color: #94a3b8;
-      padding: 1.5rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      border-top: 1px solid #334155;
-    }
-  </style>
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Hero Section with Enhanced Background */
+        #home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-top: 0;
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .developer-illustration {
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .developer-illustration::before {
+            content: "⚡";
+            font-size: 8rem;
+            position: absolute;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Floating Tech Icons around hero */
+        .hero-floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .hero-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            animation: heroFloat 8s ease-in-out infinite;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-icon:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .hero-icon:nth-child(2) { top: 25%; right: 15%; animation-delay: 2s; }
+        .hero-icon:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 4s; }
+        .hero-icon:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 6s; }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px) scale(1.1);
+        }
+
+        .star-github {
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 2rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .star-github:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+        }
+
+        /* About/Skills Section with Enhanced Background */
+        #about {
+            background: white;
+            text-align: center;
+            position: relative;
+        }
+
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-text {
+            text-align: left;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: #64748b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-item:hover::before {
+            opacity: 1;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .skill-item i {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-item span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #64748b;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skills-illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .circuit-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            background-image: 
+                radial-gradient(circle at 20% 30%, #3b82f6 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, #10b981 2px, transparent 2px),
+                radial-gradient(circle at 60% 20%, #f59e0b 2px, transparent 2px),
+                radial-gradient(circle at 40% 80%, #ef4444 2px, transparent 2px);
+            background-size: 60px 60px, 80px 80px, 100px 100px, 70px 70px;
+            animation: circuitPulse 10s ease-in-out infinite;
+        }
+
+        @keyframes circuitPulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.2; }
+        }
+
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .tech-icon {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-size: 2.2rem;
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+        }
+
+        .tech-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tech-icon:hover::before {
+            opacity: 1;
+        }
+
+        .tech-icon:nth-child(odd) {
+            animation-delay: -2s;
+        }
+
+        /* Enhanced Section Backgrounds */
+        #education {
+            background: #fafbfc;
+            position: relative;
+        }
+
+        #education::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(45deg, transparent 40%, rgba(245, 158, 11, 0.02) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(59, 130, 246, 0.02) 50%, transparent 60%);
+            background-size: 100px 100px;
+            pointer-events: none;
+        }
+
+        #projects {
+            background: white;
+            position: relative;
+        }
+
+        #projects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        #contact {
+            background: #fafbfc;
+            position: relative;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ef4444' fill-opacity='0.02'%3E%3Cpolygon points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 150px 150px;
+            pointer-events: none;
+        }
+
+        /* Rest of your existing styles remain the same... */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), rgba(59, 130, 246, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .education-card:hover::before {
+            opacity: 1;
+        }
+
+        .education-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .education-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        .education-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .education-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-info .degree {
+            font-size: 1rem;
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-info .details {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .education-year {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(118, 75, 162, 0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .project-type {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2;
+        }
+
+        .project-objective, .project-outcome {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-objective {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .project-outcome {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+        }
+
+        .project-objective strong, .project-outcome strong {
+            color: #1f2937;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.02), rgba(59, 130, 246, 0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info:hover::before {
+            opacity: 1;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-illustration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+        }
+
+        .illustration-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .illustration-content i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Resume Download */
+        .resume-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.02), rgba(239, 68, 68, 0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .resume-section:hover::before {
+            opacity: 1;
+        }
+
+        .resume-btn {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #64748b;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .education-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .hero-floating-icons {
+                display: none;
+            }
+
+            .shape {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>⚡ Sai Prasad</h1>
-    <p>Embedded Systems Engineer | IoT Developer | Edge AI Enthusiast</p>
-    <a href="resume.pdf" class="resume-btn" target="_blank"><i class="fa-solid fa-file-pdf"></i> Resume</a>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am an Embedded Systems Engineer skilled in STM32, Arduino, Raspberry Pi, FreeRTOS, and IoT development.
-      I am passionate about building real-time firmware and integrating AI on embedded devices to create smart, connected solutions.
-      This page will grow with my projects and learnings day by day.
-    </p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill"><i class="fa-solid fa-microchip"></i> STM32 / ARM Cortex-M</div>
-      <div class="skill"><i class="fa-solid fa-microchip"></i> Arduino</div>
-      <div class="skill"><i class="fa-solid fa-microchip"></i> Raspberry Pi</div>
-      <div class="skill"><i class="fa-solid fa-code"></i> Embedded C / C++</div>
-      <div class="skill"><i class="fa-solid fa-network-wired"></i> UART, I2C, SPI, CAN</div>
-      <div class="skill"><i class="fa-solid fa-microchip"></i> FreeRTOS</div>
-      <div class="skill"><i class="fa-solid fa-cloud"></i> IoT Cloud Integration</div>
-      <div class="skill"><i class="fa-solid fa-robot"></i> Edge AI</div>
+    <!-- Enhanced Background Elements -->
+    <div class="geometric-bg"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
     </div>
-  </section>
 
-  <section>
-    <h2>Projects & Learnings</h2>
-    <p>
-      🚀 Explore my STM32 projects and other learnings:
-      <a href="STM32_Project/index.html" class="project-link">STM32 Project →</a>
-    </p>
-    <p>
-      I will continue adding updates on STM32 firmware, IoT prototypes, Raspberry Pi AI experiments, and daily/weekly embedded systems learnings.
-    </p>
-  </section>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">&lt; Sai /&gt;</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" onclick="setActive(this)">Home</a></li>
+                <li><a href="#education" onclick="setActive(this)">Education</a></li>
+                <li><a href="#projects" onclick="setActive(this)">Projects</a></li>
+                <li><a href="#contact" onclick="setActive(this)">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <section>
-    <h2>Contact</h2>
-    <div class="contact-links">
-      📧 <a href="mailto:sp0404@outlook.in"><i class="fa-solid fa-envelope"></i> Email</a>
-      🔗 <a href="https://www.linkedin.com/in/sai-prasad-k-165a06271/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      💻 <a href="https://github.com/YOUR_GITHUB" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-    </div>
-  </section>
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero-floating-icons">
+            <div class="hero-icon"><i class="fas fa-microchip"></i></div>
+            <div class="hero-icon"><i class="fas fa-code"></i></div>
+            <div class="hero-icon"><i class="fas fa-wifi"></i></div>
+            <div class="hero-icon"><i class="fas fa-cogs"></i></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Sai Prasad</h1>
+                <p class="hero-subtitle">An embedded systems engineer who builds end-to-end solutions with STM32, FreeRTOS, and IoT technologies to create reliable and efficient firmware.</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/saiprasadk-firmware" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sai-prasad-k-165a06271/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:sai0404prasad@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+919494095020"><i class="fas fa-phone"></i></a>
+                </div>
+                
+                <a href="https://github.com/saiprasadk-firmware" class="star-github" target="_blank">
+                    <i class="fas fa-star"></i> Star Me On GitHub
+                </a>
+            </div>
+            
+            <div class="hero-image">
+                <div class="developer-illustration"></div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Sai Prasad | Embedded Systems Portfolio</p>
-  </footer>
+    <!-- About/Skills Section -->
+    <section id="about">
+        <h2 class="section-title">What Do I Know?</h2>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Embedded Systems Development</h3>
+                <p>I am an Embedded Systems Engineer skilled in STM32, Arduino, Raspberry Pi, FreeRTOS, and IoT development.</p>
+                <p>I build real-time firmware, integrate on-device technologies, and ship robust prototypes from board bring-up to cloud integration.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-microchip" style="color: #3b82f6;"></i>
+                        <span>STM32</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-cogs" style="color: #10b981;"></i>
+                        <span>FreeRTOS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code" style="color: #f59e0b;"></i>
+                        <span>Embedded C</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-wifi" style="color: #ef4444;"></i>
+                        <span>IoT</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-network-wired" style="color: #8b5cf6;"></i>
+                        <span>Protocols</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tools" style="color: #06b6d4;"></i>
+                        <span>Debugging</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills-illustration">
+                <div class="circuit-bg"></div>
+                <div class="tech-icons">
+                    <div class="tech-icon" style="color: #3b82f6;">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="tech-icon" style="color: #10b981;">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <div class="tech-icon" style="color: #f59e0b;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="tech-icon" style="color: #ef4444;">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="tech-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="tech-icon" style="color: #06b6d4;">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="education-grid">
+            <div class="education-card">
+                <div class="education-logo">EM</div>
+                <div class="education-info">
+                    <h3>Emertxe Information Technologies</h3>
+                    <div class="degree">Advanced Embedded Systems Certification (ESSC)</div>
+                    <div class="details">Embedded Software Engineer Program - Specialized in STM32, FreeRTOS, and embedded C programming</div>
+                </div>
+                <div class="education-year">2024</div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-logo">GIET</div>
+                <div class="education-info">
+                    <h3>GIET College of Engineering</h3>
+                    <div class="degree">B.Tech - Electronics & Communication Engineering</div>
+                    <div class="details">Focus on embedded systems, microcontrollers, and digital electronics | 68%</div>
+                </div>
+                <div class="education-year">2019-2022</div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-logo">GP</div>
+                <div class="education-info">
+                    <h3>GIET Polytechnic</h3>
+                    <div class="degree">Diploma - Electronics & Communication Engineering</div>
+                    <div class="details">Foundation in electronics, circuits, and communication systems | 73%</div>
+                </div>
+                <div class="education-year">2016-2019</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-type">Firmware</div>
+                <div class="project-header">
+                    <div class="project-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="project-title">Car Black Box Firmware</div>
+                </div>
+                
+                <div class="project-objective">
+                    <strong>Objective:</strong>
+                    Designed firmware to log vehicle events and sensor data for monitoring and safety applications.
+                </div>
+                
+                <div class="project-outcome">
+                    <strong>Outcome:</strong>
+                    Successfully implemented an interrupt-driven system with LCD interface and master-slave communication for real-time data logging.
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">PIC Microcontroller</span>
+                    <span class="tech-tag">Embedded C</span>
+                    <span class="tech-tag">Interrupts</span>
+                    <span class="tech-tag">LCD Interface</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-type">IoT</div>
+                <div class="project-header">
+                    <div class="project-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="project-title">Automatic Accident Detection System</div>
+                </div>
+                
+                <div class="project-objective">
+                    <strong>Objective:</strong>
+                    Built an IoT-based solution to automatically detect accidents and send GPS-based alerts via GSM for emergency response.
+                </div>
+                
+                <div class="project-outcome">
+                    <strong>Outcome:</strong>
+                    Successfully integrated sensors and wireless modules to transmit live location data during emergencies.
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">AT89S52</span>
+                    <span class="tech-tag">GPS Module</span>
+                    <span class="tech-tag">GSM Module</span>
+                    <span class="tech-tag">IoT Integration</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-type">Algorithm</div>
+                <div class="project-header">
+                    <div class="project-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="project-title">Image Steganography Application</div>
+                </div>
+                
+                <div class="project-objective">
+                    <strong>Objective:</strong>
+                    Developed an application to hide and retrieve secret data in BMP images using efficient steganographic algorithms.
+                </div>
+                
+                <div class="project-outcome">
+                    <strong>Outcome:</strong>
+                    Achieved secure data embedding and retrieval through optimized bitwise operations.
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">C Language</span>
+                    <span class="tech-tag">File I/O</span>
+                    <span class="tech-tag">Bitwise Operations</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-type">Driver</div>
+                <div class="project-header">
+                    <div class="project-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="project-title">GPIO & Timer Device Drivers</div>
+                </div>
+                
+                <div class="project-objective">
+                    <strong>Objective:</strong>
+                    Designed and implemented low-level drivers for GPIO and timer peripherals at the register level for STM32.
+                </div>
+                
+                <div class="project-outcome">
+                    <strong>Outcome:</strong>
+                    Delivered reusable, modular drivers validated through comprehensive hardware testing.
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">ARM Cortex-M4</span>
+                    <span class="tech-tag">STM32CubeIDE</span>
+                    <span class="tech-tag">Register Programming</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://github.com/saiprasadk-firmware" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3); transition: all 0.3s ease;" target="_blank">
+                <i class="fab fa-github"></i> View More Projects on GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 1rem;">Get In Touch</h3>
+                <p style="color: #64748b; margin-bottom: 2rem;">I am available on almost every social media platform. You can message me and I will reply within 24 hours.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.3rem;">Email</h4>
+                            <p><a href="mailto:sai0404prasad@gmail.com" style="color: #3b82f6; text-decoration: none;">sai0404prasad@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.3rem;">Phone</h4>
+                            <p><a href="tel:+919494095020" style="color: #3b82f6; text-decoration: none;">+91 9494095020</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.3rem;">LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/sai-prasad-k-165a06271/" style="color: #3b82f6; text-decoration: none;" target="_blank">Connect with me</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: linear-gradient(135deg, #1f2937, #111827);">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.3rem;">GitHub</h4>
+                            <p><a href="https://github.com/saiprasadk-firmware" style="color: #3b82f6; text-decoration: none;" target="_blank">View my repositories</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-illustration">
+                <div class="illustration-content">
+                    <i class="fas fa-paper-plane"></i>
+                    <h4 style="margin-bottom: 1rem;">Let's Connect!</h4>
+                    <p style="max-width: 300px;">Ready to discuss embedded systems projects, firmware development, or potential collaborations?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resume-section">
+            <h3 style="margin-bottom: 1rem; color: #1f2937;">Download My Resume</h3>
+            <p style="color: #64748b; margin-bottom: 1.5rem;">Get detailed information about my skills, projects, and experience</p>
+            <a href="Sai_resume.pdf" class="resume-btn" target="_blank">
+                <i class="fas fa-file-pdf"></i>
+                Download Resume
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Set active navigation item
+        function setActive(element) {
+            document.querySelectorAll('.nav-menu a').forEach(item => {
+                item.classList.remove('active');
+            });
+            element.classList.add('active');
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('active');
+        }
+
+        // Auto-highlight navigation on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
