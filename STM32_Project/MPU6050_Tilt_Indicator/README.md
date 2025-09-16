@@ -68,3 +68,8 @@ The project demonstrates **real-time orientation sensing**, **LCD display**, **U
 ---
 
 ## 📂 Repository Structure  
+/Src → Source code (main.c, sensor drivers, etc.)
+/Inc → Header files
+/Docs → Reference material, schematics
+/Project → STM32CubeIDE project files
+README.md → Project documentation
