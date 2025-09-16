@@ -1,0 +1,6 @@
+../Core/Src/lcd.c:10:6:LCD_Init	1
+../Core/Src/lcd.c:25:6:LCD_Clear	1
+../Core/Src/lcd.c:27:6:LCD_SetCursor	1
+../Core/Src/lcd.c:33:6:LCD_Print	5
+../Core/Src/lcd.c:67:13:LCD_Send	1
+../Core/Src/lcd.c:73:13:LCD_SendNibble	1

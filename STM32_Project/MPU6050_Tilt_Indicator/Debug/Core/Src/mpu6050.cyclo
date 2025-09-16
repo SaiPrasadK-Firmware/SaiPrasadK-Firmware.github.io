@@ -1,0 +1,2 @@
+../Core/Src/mpu6050.c:6:19:MPU6050_Init	2
+../Core/Src/mpu6050.c:20:19:MPU6050_ReadAccel	2
